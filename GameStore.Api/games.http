@@ -1,0 +1,15 @@
+GET http://localhost:5020/games
+
+###
+GET http://localhost:5020/games/1
+
+###
+POST http://localhost:5020/games
+Content-Type: application/json
+
+{
+    "name": "Fantastic 4",
+    "genre": "Action",
+    "price": 59,
+    "releaseDate": "2023-06-01"
+}

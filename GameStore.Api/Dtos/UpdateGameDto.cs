@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace GameStore.Api.Dtos
 {
-    public record CreateGmaeDto(
-        string Name,
+    public record UpdateGameDto(
+         string Name,
         string Genre,
         decimal Price,
         DateOnly ReleaseDate
     );
-    
+  
 }

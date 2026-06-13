@@ -8,10 +8,10 @@ POST http://localhost:5020/games
 Content-Type: application/json
 
 {
-    "name": "Fantastic 4",
+    "name": "",
     "genre": "Action",
-    "price": 59,
-    "releaseDate": "2023-06-01"
+    "price": 99.90,
+    "releaseDate": "2023-06-23"
 }
 
 ###

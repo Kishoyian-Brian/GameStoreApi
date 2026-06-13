@@ -52,6 +52,8 @@ namespace GameStore.Api.Enpoints
             //POST /games
             group.MapPost("/", (CreateGmaeDto newGame) =>
             {
+               
+
                 GamesDto game = new(
                     games.Count + 1,
                     newGame.Name,

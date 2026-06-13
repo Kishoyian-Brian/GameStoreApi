@@ -14,7 +14,16 @@ public static class DataExtensions
 
     public static void AddGame(this WebApplicationBuilder builder)
     {
-        var conString = "Host=localhost;Port=5432;Database=GamestoreDb;User Id=postgres;Password=#####";
+        var conString = builder.Configuration.GetConnectionString("GameStore");
+        if (string.IsNullOrWhiteSpace(conString))
+        {
+            throw new InvalidOperationException(
+                "Database connection string is missing. Set ConnectionStrings__GameStore " +
+                "(environment variable), add it to user secrets, or create a .env file.");
+        }
+
+     
+
         builder.Services.AddDbContext<GameStoreContext>(options =>
             options.UseNpgsql(conString)
                 .UseSeeding((context, _) =>

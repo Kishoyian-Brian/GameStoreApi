@@ -1,17 +1,17 @@
-GET http://localhost:5020/games
+GET http://localhost:5020/games/games
 
 ###
-GET http://localhost:5020/games/8
+GET http://localhost:5020/games/games/2
 
 ###
 POST http://localhost:5020/games
 Content-Type: application/json
 
 {
-    "name": "",
-    "genre": "Action",
-    "price": 99.90,
-    "releaseDate": "2023-06-23"
+    "name": "Fantastic 4",
+    "genreId": 1,
+    "price": 59.99,
+    "releaseDate": "2023-06-01"
 }
 
 ###
@@ -19,11 +19,11 @@ PUT http://localhost:5020/games/2
 Content-Type: application/json
 
 {
-    "name": "Final Destination IV",
+    "name": "Dest 5V",
     "genre": "Horror",
     "price": 10.98,
     "releaseDate": "2001-04-12"
 }
 
 ###
-DELETE http://localhost:5020/games/1
+DELETE http://localhost:5020/1

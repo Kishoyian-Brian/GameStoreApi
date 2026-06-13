@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GameStore.Api.Data;
 using GameStore.Api.Dtos;
+using GameStore.Api.Models;
 
 namespace GameStore.Api.Enpoints
 {
@@ -50,19 +52,28 @@ namespace GameStore.Api.Enpoints
 
 
             //POST /games
-            group.MapPost("/", (CreateGmaeDto newGame) =>
+            group.MapPost("/", (CreateGmaeDto newGame, GameStoreContext dbContext) =>
             {
-               
+               Game game = new()
+               {
+                   Name=newGame.Name,
+                   GenreId = newGame.GenreId,
+                   Price= newGame.Price,
+                   ReleseaseDate=newGame.ReleaseDate
+               };
 
-                GamesDto game = new(
-                    games.Count + 1,
-                    newGame.Name,
-                    newGame.Genre,
-                    newGame.Price,
-                    newGame.ReleaseDate
+                dbContext.Games.Add(game);
+                dbContext.SaveChanges();
+
+                GameDetailsDto gameDetailsDto=new(
+                    game.Id,
+                    game.Name,
+                    game.GenreId,
+                    game.Price,
+                    game.ReleseaseDate
                 );
-                games.Add(game);
-                return Results.CreatedAtRoute(EndpointName, new { id = game.Id }, game);
+
+                return Results.CreatedAtRoute(EndpointName, new { id = gameDetailsDto.Id }, gameDetailsDto);
             });
 
 

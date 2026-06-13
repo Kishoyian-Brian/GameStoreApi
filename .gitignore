@@ -1,0 +1,46 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio / VS Code
+.vs/
+.vscode/*
+!.vscode/settings.json
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+## .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.nupkg
+*.snupkg
+
+## Rider
+.idea/
+*.sln.iml
+
+## OS
+.DS_Store
+Thumbs.db
+
+## User secrets and local config
+secrets.json
+appsettings.*.local.json
+*.env
+.env.*
+
+## Test / coverage
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+## EF Core tools
+*.db
+*.db-shm
+*.db-wal

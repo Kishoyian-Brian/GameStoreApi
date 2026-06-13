@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GameStore.Api.Dtos
 {
-    public record  GamesDto(
+    public record  GameSummaryDto(
         int Id,
         string Name,
         string Genre,

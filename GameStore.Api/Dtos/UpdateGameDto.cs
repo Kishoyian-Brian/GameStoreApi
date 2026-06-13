@@ -8,7 +8,7 @@ namespace GameStore.Api.Dtos
 {
     public record UpdateGameDto(
       [Required] [StringLength(15)]string Name,
-        [Required][StringLength(15)]string Genre,
+         [Range(1,50)]int GenreId,
         [Required][Range(1,100)]decimal Price,
        [Required] DateOnly ReleaseDate
     );
